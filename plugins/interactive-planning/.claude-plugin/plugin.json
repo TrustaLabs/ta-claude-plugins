@@ -1,0 +1,16 @@
+{
+  "name": "trusta-interactive-planning",
+  "version": "0.2.1",
+  "description": "通过交互式多轮对话帮助创建详细、可执行的实施计划，包含5层次需求框架和MoSCoW范围确认",
+  "author": {
+    "name": "Trusta Team"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trusta/ta-claude-plugins"
+  },
+  "license": "MIT",
+  "keywords": ["planning", "requirements", "design", "workflow", "interactive"],
+  "skills": ["./skills"],
+  "commands": ["./commands/ta-plan.md"]
+}
