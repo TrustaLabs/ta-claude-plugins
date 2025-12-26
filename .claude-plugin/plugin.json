@@ -1,0 +1,12 @@
+{
+  "name": "ta-claude-plugins",
+  "version": "0.1.0",
+  "description": "Trusta 通用 Claude 插件集合，包含交互式计划制定等实用功能",
+  "author": {
+    "name": "Claude"
+  },
+  "skills": [
+    "./skills/interactive-planning",
+    "./skills/load-context"
+  ]
+}
