@@ -31,7 +31,17 @@ Trusta 团队的 Claude Code 插件集合，提供多种实用功能来增强开
 
 ## 🚀 快速开始
 
-### 安装单个插件
+### 方式一：添加 Marketplace（推荐）
+
+一次性添加所有插件：
+
+```bash
+claude-code marketplace add https://github.com/trusta/ta-claude-plugins.git
+```
+
+添加后，所有插件会自动安装并可用。
+
+### 方式二：安装单个插件
 
 ```bash
 # 安装交互式计划制定插件
@@ -41,17 +51,6 @@ claude-code plugin install ./plugins/interactive-planning
 claude-code plugin install ./plugins/team-context
 ```
 
-### 安装所有插件
-
-```bash
-# 克隆仓库
-git clone https://github.com/trusta/ta-claude-plugins.git
-cd ta-claude-plugins
-
-# 安装所有插件
-claude-code plugin install ./plugins/interactive-planning
-claude-code plugin install ./plugins/team-context
-```
 
 ## 📖 使用指南
 
