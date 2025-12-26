@@ -1,0 +1,17 @@
+{
+  "description": "团队知识上下文系统 - 自动注入团队规范到代码生成过程",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash $CLAUDE_PLUGIN_ROOT/hooks/auto-inject-context.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

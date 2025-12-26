@@ -384,11 +384,35 @@ git commit -m "docs: update team context"
 A: 可以，但当前推荐单文件管理（适合小团队）。如果知识量很大，可以按主题拆分。
 
 **Q: 如何让 AI 自动应用规范，而不是每次手动加载？**
-A: 可以使用 Hook 机制（见详细指南），在代码生成前自动注入规范。
+A: 插件已内置 Hook 机制，会在代码生成前自动注入规范。默认启用，可通过配置文件禁用。
+
+**Q: 如何禁用自动注入功能？**
+A: 在项目根目录创建 `.claude/team-context-config.json` 文件，设置 `{"autoInject": false}`。
 
 **Q: 知识更新后需要重新加载吗？**
-A: 是的，编辑 `team-context.md` 后需要重新运行 `/load-context`。
+A: 如果使用 `/load-context` 手动加载，需要重新运行。如果使用 Hook 自动注入，会自动读取最新内容。
 
 **Q: 会消耗很多 token 吗？**
-A: 按需加载可以控制 token 消耗。建议只加载当前任务需要的知识类型。
+A: Hook 机制会根据文件类型智能加载相关规范，避免加载不必要的内容。手动加载时建议按需加载。
+
+### Hook 自动注入机制
+
+插件内置了 PreToolUse Hook，会在代码生成前自动注入相关的团队规范：
+
+**自动注入规则：**
+- `.ts/.tsx/.js/.jsx` 文件 → 加载编码规范 + 架构设计
+- `.py` 文件 → 加载编码规范
+- 包含 `test` 或 `spec` 的文件 → 加载编码规范
+- 包含 `api` 或 `service` 的文件 → 加载编码规范 + 架构设计 + 业务知识
+
+**配置自动注入：**
+
+创建 `.claude/team-context-config.json`：
+```json
+{
+  "autoInject": true
+}
+```
+
+设置为 `false` 可禁用自动注入，改用手动 `/load-context` 方式。
 
