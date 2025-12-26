@@ -36,7 +36,7 @@ Trusta 团队的 Claude Code 插件集合，提供多种实用功能来增强开
 一次性添加所有插件：
 
 ```bash
-claude-code marketplace add https://github.com/trusta/ta-claude-plugins.git
+claude plugin marketplace add https://github.com/trusta/ta-claude-plugins.git
 ```
 
 添加后，所有插件会自动安装并可用。
@@ -45,10 +45,10 @@ claude-code marketplace add https://github.com/trusta/ta-claude-plugins.git
 
 ```bash
 # 安装交互式计划制定插件
-claude-code plugin install ./plugins/interactive-planning
+claude plugin install ./plugins/interactive-planning
 
 # 安装团队知识上下文插件
-claude-code plugin install ./plugins/team-context
+claude plugin install ./plugins/team-context
 ```
 
 
