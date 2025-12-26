@@ -2,8 +2,6 @@
 
 ```
 ta-claude-plugins/
-├── .claude/                                    # Claude Code 配置目录
-│   └── settings.local.json                     # 本地设置
 │
 ├── .claude-plugin/                             # 插件配置
 │   └── plugin.json                             # 插件清单
@@ -23,6 +21,10 @@ ta-claude-plugins/
 │
 ├── commands/                                   # Commands 目录
 │   └── ta-plan.md                              # /ta-plan 命令
+│
+├── hooks/                                      # Hooks 目录
+│   ├── hooks.json                              # Hook 配置
+│   └── auto-inject-context.sh                 # 自动注入脚本
 │
 ├── docs/                                       # 文档目录
 │   ├── team-context.md                         # 团队知识库（核心文件）

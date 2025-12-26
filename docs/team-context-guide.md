@@ -268,34 +268,63 @@ const user_name = "Alice"; // ❌
         └── skill.md  # 修改为读取多个文件
 ```
 
-### 2. Hook 自动注入（可选）
+### 2. Hook 自动注入（已内置）
 
-创建 `.claude/hooks/auto-apply-standards.js`：
+插件已内置 PreToolUse Hook，会在代码生成前自动注入相关规范。
 
-```javascript
-// PreToolUse Hook
-module.exports = {
-  event: 'PreToolUse',
-  filter: (tool) => ['Write', 'Edit'].includes(tool.name),
-  handler: async (context) => {
-    const { tool, filePath } = context;
+**工作原理：**
 
-    // 根据文件类型加载相关规范
-    const ext = filePath.split('.').pop();
-    let type = 'coding-standards';
+1. **触发时机**：当 AI 准备执行 Write 或 Edit 工具时
+2. **智能判断**：根据文件路径和扩展名判断需要加载哪些知识
+3. **提取内容**：从 `docs/team-context.md` 提取相关章节
+4. **注入上下文**：将提取的内容作为 systemMessage 注入
 
-    if (['ts', 'tsx', 'jsx'].includes(ext)) {
-      type = 'coding-standards,architecture';
-    } else if (['py'].includes(ext)) {
-      type = 'coding-standards';
-    }
+**自动注入规则：**
 
-    // 读取并注入知识
-    const knowledge = await loadContext(type);
-    context.addSystemMessage(knowledge);
-  }
-};
+```bash
+# 文件类型映射
+.ts/.tsx/.js/.jsx → coding-standards + architecture
+.py               → coding-standards
+包含 test/spec    → coding-standards
+包含 api/service  → coding-standards + architecture + business
 ```
+
+**章节匹配逻辑：**
+
+Hook 使用 sed 命令根据 Markdown 标题提取章节：
+
+```bash
+# 提取编码规范（第1章）
+sed -n '/^## 1\. 编码规范/,/^## 2\./p' docs/team-context.md | head -n 50
+
+# 提取架构设计（第2章）
+sed -n '/^## 2\. 架构设计/,/^## 3\./p' docs/team-context.md | head -n 50
+
+# 提取业务知识（第3章）
+sed -n '/^## 3\. 业务知识/,/^## 4\./p' docs/team-context.md | head -n 50
+```
+
+**配置自动注入：**
+
+创建 `.claude/team-context-config.json`：
+
+```json
+{
+  "autoInject": true  // 设置为 false 可禁用
+}
+```
+
+**Hook 实现文件：**
+
+- `hooks/hooks.json` - Hook 配置
+- `hooks/auto-inject-context.sh` - 注入逻辑脚本
+
+**注意事项：**
+
+- Hook 在会话启动时加载，修改后需重启 Claude Code
+- 使用 `claude --debug` 可查看 Hook 执行日志
+- 每个章节限制提取前 50 行，避免 token 消耗过多
+
 
 ### 3. 知识版本管理
 
