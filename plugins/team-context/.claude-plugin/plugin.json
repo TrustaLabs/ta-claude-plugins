@@ -5,10 +5,7 @@
   "author": {
     "name": "Trusta Team"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/trusta/ta-claude-plugins"
-  },
+  "repository": "https://github.com/trusta/ta-claude-plugins",
   "license": "MIT",
   "keywords": ["team", "context", "standards", "knowledge", "automation"],
   "skills": ["./skills"],
