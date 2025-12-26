@@ -35,3 +35,6 @@ venv/
 dist/
 build/
 *.egg-info/
+
+
+/docs/plans
