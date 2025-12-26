@@ -1,0 +1,19 @@
+{
+  "name": "trusta-spec",
+  "version": "1.0.0",
+  "description": "项目规范管理插件：初始化项目文档结构和创建详细实施计划",
+  "author": {
+    "name": "Trusta Team"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trusta/ta-claude-plugins"
+  },
+  "license": "MIT",
+  "keywords": ["specification", "planning", "documentation", "requirements", "design"],
+  "skills": ["./skills"],
+  "commands": [
+    "./commands/ta-init.md",
+    "./commands/ta-plan.md"
+  ]
+}

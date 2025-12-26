@@ -1,15 +1,15 @@
 {
   "name": "trusta-claude-plugins-marketplace",
   "version": "1.0.0",
-  "description": "Trusta 团队的 Claude Code 插件集合，提供交互式计划制定和团队知识上下文管理功能",
+  "description": "Trusta 团队的 Claude Code 插件集合，提供项目规范管理和团队知识上下文功能",
   "owner": {
     "name": "Trusta Team"
   },
   "plugins": [
     {
-      "name": "trusta-interactive-planning",
-      "source": "./plugins/interactive-planning",
-      "description": "通过交互式多轮对话帮助创建详细、可执行的实施计划"
+      "name": "trusta-spec",
+      "source": "./plugins/ta-spec",
+      "description": "项目规范管理：初始化项目文档结构和创建详细实施计划"
     },
     {
       "name": "trusta-team-context",

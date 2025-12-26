@@ -12,6 +12,5 @@
   "license": "MIT",
   "keywords": ["team", "context", "standards", "knowledge", "automation"],
   "skills": ["./skills"],
-  "commands": ["./commands/ta-init.md"],
   "hooks": "./hooks/hooks.json"
 }
