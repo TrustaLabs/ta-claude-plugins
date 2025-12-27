@@ -15,7 +15,7 @@ Trusta 团队的 Claude Code 插件集合，提供多种实用功能来增强开
 - ⚡ 灵活的3-5轮对话流程，提高信息密度
 - 📝 自动生成结构化计划文档
 
-[查看详细文档 →](./plugins/interactive-planning/README.md)
+[查看详细文档 →](./plugins/ta-spec/README.md)
 
 ### 2. Team Context（团队知识上下文系统）
 
@@ -45,7 +45,7 @@ claude plugin marketplace add https://github.com/trusta/ta-claude-plugins.git
 
 ```bash
 # 安装交互式计划制定插件
-claude plugin install ./plugins/interactive-planning
+claude plugin install ./plugins/ta-spec
 
 # 安装团队知识上下文插件
 claude plugin install ./plugins/team-context
@@ -87,7 +87,7 @@ claude plugin install ./plugins/team-context
 ```
 ta-claude-plugins/
 ├── plugins/
-│   ├── interactive-planning/     # 交互式计划制定插件
+│   ├── ta-spec/     # 交互式计划制定插件
 │   │   ├── .claude-plugin/
 │   │   ├── skills/
 │   │   ├── commands/
