@@ -1,6 +1,6 @@
 {
   "name": "trusta-spec",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "项目规范管理插件：初始化项目文档结构和创建详细实施计划",
   "author": {
     "name": "Trusta Team"
