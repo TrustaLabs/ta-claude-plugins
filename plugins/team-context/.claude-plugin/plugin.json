@@ -8,6 +8,5 @@
   "repository": "https://github.com/trusta/ta-claude-plugins",
   "license": "MIT",
   "keywords": ["team", "context", "standards", "knowledge", "automation"],
-  "skills": ["./skills"],
-  "hooks": "./hooks/hooks.json"
+  "skills": ["./skills"]
 }

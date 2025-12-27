@@ -35,6 +35,7 @@ Trusta 团队的 Claude Code 插件集合，提供多种实用功能来增强开
 
 一次性添加所有插件：
 
+
 ```bash
 claude plugin marketplace add https://github.com/trusta/ta-claude-plugins.git
 ```
