@@ -16,7 +16,7 @@ ta-claude-plugins/
 │   │   ├── commands/
 │   │   │   ├── ta-init.md                      # /ta-init 命令
 │   │   │   └── ta-plan.md                      # /ta-plan 命令
-│   │   ├── skills/
+│   │   ├── interactiveplanning/
 │   │   │   ├── SKILL.md                        # Interactive Planning Skill
 │   │   │   ├── examples/                       # 示例文档
 │   │   │   └── references/                     # 参考文档

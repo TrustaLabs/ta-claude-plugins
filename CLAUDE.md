@@ -2,11 +2,6 @@
 
 Trusta 团队的 Claude Code 插件集合，提供项目规范管理和团队知识上下文功能。
 
-## 项目概述
-
-这是一个 Claude Code 插件 Marketplace，包含两个核心插件：
-- **trusta-spec**：项目规范管理插件，提供文档初始化和交互式计划制定功能
-- **trusta-team-context**：团队知识上下文插件，让 AI 自动应用团队编码规范和业务知识
 
 ## 技术栈
 
@@ -23,27 +18,8 @@ ta-claude-plugins/
 │   └── marketplace.json          # Marketplace 配置
 ├── plugins/
 │   ├── ta-spec/                  # 项目规范管理插件
-│   │   ├── .claude-plugin/
-│   │   │   └── plugin.json       # 插件配置
-│   │   ├── commands/             # 斜杠命令
-│   │   │   ├── ta-init.md        # 文档初始化命令
-│   │   │   └── ta-plan.md        # 计划制定命令
-│   │   ├── skills/               # 技能定义
-│   │   │   └── skills/
-│   │   │       ├── SKILL.md      # 主技能文件
-│   │   │       ├── examples/     # 示例
-│   │   │       └── references/   # 参考资料
-│   │   └── README.md
 │   │
 │   └── team-context/             # 团队知识上下文插件
-│       ├── .claude-plugin/
-│       │   └── plugin.json
-│       ├── hooks/                # 钩子定义
-│       │   └── hooks.json
-│       ├── skills/               # 技能定义
-│       │   ├── skill.md
-│       │   └── examples/
-│       └── README.md
 │
 ├── docs/                         # 共享文档
 │   ├── plans/                    # 实施计划
@@ -86,20 +62,6 @@ claude plugin marketplace update trusta-claude-plugins-marketplace
 /ta-plan <任务描述>
 ```
 
-### Git 操作
-
-```bash
-# 提交更改
-git add .
-git commit -m "描述"
-git push
-
-# 创建新分支
-git checkout -b feature/new-feature
-
-# 查看状态
-git status
-```
 
 ## 编码规范
 
@@ -120,25 +82,6 @@ git status
    - 技能文件使用 SKILL.md 或 skill.md
    - 包含清晰的使用说明和示例
 
-### Git 规范
-
-1. **提交信息格式**
-   ```
-   <type>(<scope>): <subject>
-
-   类型：feat, fix, docs, style, refactor, test, chore
-   范围：插件名或功能模块
-   主题：简短描述（中文）
-   ```
-
-2. **分支管理**
-   - `main`：主分支，保持稳定
-   - `feature/*`：新功能分支
-   - `fix/*`：修复分支
-
-3. **文件操作**
-   - 使用 `git mv` 而不是 `mv` 来移动文件
-   - 确保 git 能正确追踪文件移动和重命名
 
 ### 插件开发规范
 
@@ -167,9 +110,8 @@ git status
 当需要了解以下内容时，请阅读对应文档：
 
 - **插件开发指南和最佳实践** → 请阅读 `docs/PLUGIN_DEVELOPMENT.md`
-- **贡献代码和提交 PR 流程** → 请阅读 `docs/CONTRIBUTING.md`
 - **团队知识上下文系统** → 请阅读 `docs/team-context-guide.md`
-- **项目结构详细说明** → 请阅读 `STRUCTURE.md`
+- **项目结构详细说明** → 请阅读 `docs/STRUCTURE.md`
 
 ⚠️ **重要**：在开始实现功能前，如果涉及以上领域，请先使用 Read 工具阅读相关文档。
 
@@ -235,12 +177,6 @@ git status
 
 ## 相关资源
 
-- [Claude Code 官方文档](https://docs.anthropic.com/claude-code)
-- [插件开发指南](https://docs.anthropic.com/claude-code/plugins)
-- [问题反馈](https://github.com/trusta/ta-claude-plugins/issues)
+- [Claude Code 官方文档](https://code.claude.com/docs)
+- [插件开发指南](https://code.claude.com/docs/en/plugins)
 
----
-
-**版本：** 1.0.0
-**维护者：** Trusta Team
-**许可证：** MIT
