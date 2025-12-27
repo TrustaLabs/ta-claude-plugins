@@ -1,12 +1,12 @@
 {
   "name": "trusta-team-context",
-  "version": "0.1.0",
-  "description": "让AI研发助手了解和应用团队的编码规范、架构设计、业务知识和工作流程，支持自动注入和按需加载",
+  "version": "0.2.0",
+  "description": "让AI研发助手了解和应用团队的编码规范、架构设计、业务知识和工作流程。支持智能标签匹配和自动注入（包括 Plan 模式）",
   "author": {
     "name": "Trusta Team"
   },
   "repository": "https://github.com/trusta/ta-claude-plugins",
   "license": "MIT",
-  "keywords": ["team", "context", "standards", "knowledge", "automation"],
+  "keywords": ["team", "context", "standards", "knowledge", "automation", "tags", "yaml"],
   "skills": ["./skills"]
 }

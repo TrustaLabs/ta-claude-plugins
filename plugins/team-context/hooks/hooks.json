@@ -1,9 +1,9 @@
 {
-  "description": "团队知识上下文系统 - 自动注入团队规范到代码生成过程",
+  "description": "团队知识上下文系统 - 自动注入团队规范到代码生成和计划过程",
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "Write|Edit",
+        "matcher": "Write|Edit|EnterPlanMode",
         "hooks": [
           {
             "type": "command",

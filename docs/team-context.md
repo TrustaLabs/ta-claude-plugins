@@ -1,7 +1,6 @@
 ---
-version: "1.0.0"
-last_updated: "2025-12-26"
-tags: ["coding-standards", "architecture", "business", "workflow"]
+version: "2.0.0"
+last_updated: "2025-12-27"
 description: "团队研发知识库 - 包含编码规范、架构设计、业务知识和工作流程"
 ---
 
@@ -10,6 +9,12 @@ description: "团队研发知识库 - 包含编码规范、架构设计、业务
 本文档包含团队的研发约定、背景知识、业务知识等，供 AI 研发助手参考。
 
 ## 1. 编码规范
+
+---
+tags: [coding-standards, naming]
+title: "命名约定"
+priority: high
+---
 
 ### 1.1 命名约定
 
@@ -42,6 +47,12 @@ const Max_Retry_Count = 3;
 class Manager {}
 ```
 
+---
+
+---
+tags: [coding-standards, functions]
+title: "函数设计"
+priority: high
 ---
 
 ### 1.2 函数设计
@@ -79,6 +90,12 @@ function processUser(name: string, email: string, role: string, sendEmail: boole
 }
 ```
 
+---
+
+---
+tags: [coding-standards, errors]
+title: "错误处理"
+priority: high
 ---
 
 ### 1.3 错误处理
@@ -120,6 +137,12 @@ async function getUser(userId: string): Promise<User | null> {
 
 ## 2. 架构设计
 
+---
+tags: [architecture, frontend, backend]
+title: "技术栈"
+priority: high
+---
+
 ### 2.1 技术栈
 
 **前端：**
@@ -134,6 +157,12 @@ async function getUser(userId: string): Promise<User | null> {
 - ORM：Prisma
 - 认证：JWT
 
+---
+
+---
+tags: [architecture, frontend]
+title: "目录结构"
+priority: medium
 ---
 
 ### 2.2 目录结构
@@ -178,6 +207,12 @@ src/
 
 ---
 
+---
+tags: [architecture, api, backend]
+title: "API 设计"
+priority: high
+---
+
 ### 2.3 API 设计
 
 **原则：** 遵循 RESTful 规范，使用语义化的 HTTP 方法和状态码。
@@ -216,6 +251,12 @@ router.delete('/users/:id', async (req, res) => {
 
 ## 3. 业务知识
 
+---
+tags: [business, user, order]
+title: "核心业务概念"
+priority: medium
+---
+
 ### 3.1 核心业务概念
 
 **用户角色：**
@@ -231,6 +272,12 @@ router.delete('/users/:id', async (req, res) => {
 - `delivered` - 已送达
 - `cancelled` - 已取消
 
+---
+
+---
+tags: [business, auth, order]
+title: "业务规则"
+priority: high
 ---
 
 ### 3.2 业务规则
@@ -254,6 +301,12 @@ router.delete('/users/:id', async (req, res) => {
 
 ## 4. 工作流程
 
+---
+tags: [workflow, git]
+title: "Git 工作流"
+priority: high
+---
+
 ### 4.1 Git 工作流
 
 **原则：** 使用 Feature Branch 工作流，保持主分支稳定。
@@ -276,6 +329,12 @@ router.delete('/users/:id', async (req, res) => {
 
 ---
 
+---
+tags: [workflow, review]
+title: "代码审查"
+priority: high
+---
+
 ### 4.2 代码审查
 
 **原则：** 所有代码必须经过至少一人审查才能合并。
@@ -289,6 +348,12 @@ router.delete('/users/:id', async (req, res) => {
 - [ ] 没有安全漏洞（如 SQL 注入、XSS）
 - [ ] 测试覆盖关键路径
 
+---
+
+---
+tags: [workflow, deployment]
+title: "发布流程"
+priority: medium
 ---
 
 ### 4.3 发布流程
